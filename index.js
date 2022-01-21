@@ -77,7 +77,7 @@ function login() {
             // Push to Firebase Database
             database_ref.child('users/' + user.uid).update(user_data)
             alert('User Login!')
-            window.location.href = "lto.html";
+            window.location.href = "user-landing.html";
         })
         .catch(function (error) {
             // Firebase will use this to alert of its errors

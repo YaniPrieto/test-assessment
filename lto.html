@@ -22,19 +22,19 @@
 </head>
 
 <body>
-    <label>First Name</label> <input id="Firstbox" type="text">
-    <label>Last Name</label> <input id="Lastbox" type="text">
-    <label>Tel No</label> <input id="Telbox" type="text"><br><br>
-    <label>Tin</label> <input id="Tinbox" type="text">
-    <label>Nationality</label> <input id="Natbox" type="text">
+    <label>First Name</label> <input id="Firstbox" type="text" placeholder="e.g Juan">
+    <label>Last Name</label> <input id="Lastbox" type="text" placeholder="e.g Prieto">
+    <label>Tel No</label> <input id="Telbox" type="text" placeholder="3057380 (number)"><br><br>
+    <label>Tin</label> <input id="Tinbox" type="text" placeholder="3000">
+    <label>Nationality</label> <input id="Natbox" type="text" placeholder="Filipino">
     <label>Sex</label>
     <select id="Genbox"><br><br>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
     </select>
-    <label>Birthday</label> <input id="Birthbox" type="text">
-    <label>Height</label> <input id="Heightbox" type="text">
-    <label>Weight</label> <input id="Weightbox" type="text"><br><br>
+    <label>Birthday</label> <input id="Birthbox" type="text" placeholder="03/14/00">
+    <label>Height</label> <input id="Heightbox" type="text" placeholder="180cm">
+    <label>Weight</label> <input id="Weightbox" type="text" placeholder="70kg"><br><br>
     <label>Civil Status</label>
     <select id="Civilbox"><br><br>
         <option value="Single">Single</option>
@@ -50,8 +50,8 @@
         <option value="Female">High School</option>
         <option value="Female">Elementary</option>
     </select>
-    <label>Blood Type</label> <input id="Bloodbox" type="text"><br><br>
-    <label>ID</label> <input id="Rollbox" type="text"><br><br>
+    <label>Blood Type</label> <input id="Bloodbox" type="text" placeholder="O-"><br><br>
+    <label>ID</label> <input id="Rollbox" type="text" placeholder="001"><br><br>
 
 
     <hr>
@@ -241,6 +241,17 @@
                 });
         }
         function validate_field(field) {
+            if (field == null) {
+                return false
+            }
+            if (field.length <= 0) {
+                return false
+            } else {
+                return true
+            }
+
+        }
+        function validate_(field) {
             if (field == null) {
                 return false
             }
