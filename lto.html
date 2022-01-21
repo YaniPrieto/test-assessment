@@ -1,167 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <title>L.O.V.E Landing Page</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/css.css">
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD TUT</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 80px
+        }
+
+        input,
+        select {
+            width: 120px;
+        }
+    </style>
+    <center>User</center><br><br>
 </head>
 
 <body>
-    </div>
-    <header class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
-                        </a>
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="service.html" class="active">Service Offered</a></li>
-                            <li class="scroll-to-section"><a href="contact-number.html" class="active">Contact
-                                    Number</a></li>
-                            <li class="scroll-to-section"><a href="technology.html" class="active">Technology</a>
-                            </li>
-                            <li class="scroll-to-section"><a href="lto.html" class="active">LTO-ADL-Form21</a>
-                            </li>
-                            <!-- ”LTO-ADL-Form21 -->
-                            <div class="gradient-button"><a id="modal_trigger" href="#modal"><i
-                                        class="fa fa-sign-in-alt"></i> Sign In</a></div>
-                            </li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                    </nav>
+    <label>First Name</label> <input id="Firstbox" type="text">
+    <label>Last Name</label> <input id="Lastbox" type="text">
+    <label>Tel No</label> <input id="Telbox" type="text"><br><br>
+    <label>Tin</label> <input id="Tinbox" type="text">
+    <label>Nationality</label> <input id="Natbox" type="text">
+    <label>Sex</label>
+    <select id="Genbox"><br><br>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <label>Birthday</label> <input id="Birthbox" type="text">
+    <label>Height</label> <input id="Heightbox" type="text">
+    <label>Weight</label> <input id="Weightbox" type="text"><br><br>
+    <label>Civil Status</label>
+    <select id="Civilbox"><br><br>
+        <option value="Single">Single</option>
+        <option value="Married">Married</option>
+        <option value="Widowed">Widowed</option>
+        <option value="Separated">Separated</option>
 
-                </div>
-            </div>
-        </div>
-    </header>
-    <div id="modal" class="popupContainer" style="display:none;">
-        <div class="popupHeader">
-            <span class="header_title">Login</span>
-            <span class="modal_close"><i class="fa fa-times"></i></span>
-        </div>
-        <section class="popupBody">
-            <div class="social_login">
-                <div class="">
-                </div>
-                <div class="centeredText">
-                </div>
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                    <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-                </div>
-            </div>
-            <div class="user_login">
-                <form>
-                    <label>Email / Username</label>
-                    <input type="text" />
-                    <br />
-                    <label>Password</label>
-                    <input type="password" />
-                    <br />
-                    <div class="checkbox">
-                        <input id="remember" type="checkbox" />
-                        <label for="remember">Remember me on this computer</label>
-                    </div>
-                    <div class="action_btns">
-                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
-                                Back</a>
-                        </div>
-                        <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
-                    </div>
-                </form>
-                <a href="#" class="forgot_password">Forgot password?</a>
-            </div>
-            <div class="user_register">
-                <form>
-                    <label>Full Name</label>
-                    <input type="text" />
-                    <br />
-                    <label>Email Address</label>
-                    <input type="email" />
-                    <br />
-                    <label>Password</label>
-                    <input type="password" />
-                    <br />
-                    <div class="checkbox">
-                        <input id="send_updates" type="checkbox" />
-                        <label for="send_updates">Update</label>
-                    </div>
-                    <div class="action_btns">
-                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
-                                Back</a>
-                        </div>
-                        <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </div>
-    <div class="main-banner" id="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-6 align-self-center">
-                            <div class="left-content">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h2>This website used the following Application</h2>
-                                        <iframe src="https://yaniprieto.github.io/test-assessment/assets/pdf.pdf"
-                                            width="100%" height="1920px">
-                                        </iframe>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="white-button first-button scroll-to-section">
-                                        </div>
-                                        <div class="white-button scroll-to-section">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="right-image">
-                                <img src="assets/images/license.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
+    </select>
+    <label>Highest Educational Attainment</label>
+    <select id="Educbox"><br><br>
+        <option value="Male">Post Graduate</option>
+        <option value="Female">College</option>
+        <option value="Female">High School</option>
+        <option value="Female">Elementary</option>
+    </select>
+    <label>Blood Type</label> <input id="Bloodbox" type="text"><br><br>
+    <label>ID</label> <input id="Rollbox" type="text"><br><br>
+
+
+    <hr>
+    <button id="Insbtn">Insert</button>
+    <!-- <button id="Selbtn">Select</button> -->
+    <button id="Updbtn">Update</button>
+    <!-- <button id="Delbtn">Delete</button> -->
+
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCf5OoxpF-pY_FJgFMUJQt0r_pdk1a5t7I",
+            authDomain: "crudtut-caeec.firebaseapp.com",
+            projectId: "crudtut-caeec",
+            storageBucket: "crudtut-caeec.appspot.com",
+            messagingSenderId: "287791850747",
+            appId: "1:287791850747:web:aaae527f6990f83e33fc5e",
+            databaseURL: "https://crudtut-caeec-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        import { getDatabase, ref, get, set, child, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js"
+        const db = getDatabase();
+        // Reference Variables
+        var firstbox = document.getElementById("Firstbox");
+        var lastbox = document.getElementById("Lastbox");
+        var telbox = document.getElementById("Telbox");
+        var tinbox = document.getElementById("Tinbox");
+        var natbox = document.getElementById("Natbox");
+        var genbox = document.getElementById("Genbox");
+        var birthbox = document.getElementById("Birthbox");
+        var heightbox = document.getElementById("Heightbox");
+        var weightbox = document.getElementById("Weightbox");
+        var civilbox = document.getElementById("Civilbox");
+        var educbox = document.getElementById("Educbox");
+        var bloodbox = document.getElementById("Bloodbox");
+        var rollbox = document.getElementById("Rollbox");
+
+
+
+        var instBtn = document.getElementById("Insbtn");
+        var selBtn = document.getElementById("Selbtn");
+        var updBtn = document.getElementById("Updbtn");
+        var delBtn = document.getElementById("Delbtn");
+
+        // <!-- CREATING DATA -->
+        function InsertData() {
+            if (confirm("You want to confirm?")) {
+
+            } else {
+                return;
+            }
+            if (validate_field(firstbox.value) == false || validate_field(lastbox.value) == false) {
+                alert('No first or last name in the field!')
+                return
+            }
+            if (validate_field(telbox.value) == false || validate_field(tinbox.value) == false) {
+                alert('No Tellphone Number or Tin in the field!')
+                return
+            }
+            if (validate_field(natbox.value) == false || validate_field(birthbox.value) == false) {
+                alert('No Nationality or Birthday in the field!')
+                return
+            }
+            if (validate_field(heightbox.value) == false || validate_field(weightbox.value) == false) {
+                alert('No Weight or Height in the field!')
+                return
+            }
+            if (validate_field(civilbox.value) == false || validate_field(educbox.value) == false) {
+                alert('No Civil Status or Educational Attainment in the field!')
+                return
+            }
+            if (validate_field(bloodbox.value) == false || validate_field(rollbox.value) == false) {
+                alert('No Blood Type or Id Num in the field!')
+                return
+            }
+            set(ref(db, "Lto-Form/" + lastbox.value), {
+                FirstName: firstbox.value,
+                LastName: lastbox.value,
+                TelephoneNo: telbox.value,
+                Tin: tinbox.value,
+                Nationality: natbox.value,
+                Sex: genbox.value,
+                Birthday: birthbox.value,
+                Height: heightbox.value,
+                Weight: weightbox.value,
+                CivilStatus: civilbox.value,
+                EducationAttain: educbox.value,
+                BloodType: bloodbox.value,
+                RollNo: rollbox.value
+
+            })
+                .then(() => {
+                    alert("data stored successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+        //Select Data Function
+        function SelectData() {
+            const dbref = ref(db);
+            get(child(dbref, "Lto-Form/" + lastbox.value)).then((snapshot) => {
+                if (snapshot.exists()) {
+
+                } else {
+                    alert("No data found");
+                }
+            })
+                .catch((error) => {
+                    alert("boo you suck error" + error);
+                })
+                ;
+        }
+
+        //Update Data
+        function UpdateData() {
+            if (confirm("You want to confirm?")) {
+
+            } else {
+                return;
+            }
+            if (validate_field(firstbox.value) == false || validate_field(lastbox.value) == false) {
+                alert('No first or last name in the field!')
+                return
+            }
+            if (validate_field(telbox.value) == false || validate_field(tinbox.value) == false) {
+                alert('No Tellphone Number or Tin in the field!')
+                return
+            }
+            if (validate_field(natbox.value) == false || validate_field(birthbox.value) == false) {
+                alert('No Nationality or Birthday in the field!')
+                return
+            }
+            if (validate_field(heightbox.value) == false || validate_field(weightbox.value) == false) {
+                alert('No Weight or Height in the field!')
+                return
+            }
+            if (validate_field(civilbox.value) == false || validate_field(educbox.value) == false) {
+                alert('No Civil Status or Educational Attainment in the field!')
+                return
+            }
+            if (validate_field(bloodbox.value) == false || validate_field(rollbox.value) == false) {
+                alert('No Blood Type or Id Num in the field!')
+                return
+            }
+            update(ref(db, "Lto-Form/" + lastbox.value), {
+                FirstName: firstbox.value,
+                LastName: lastbox.value,
+                TelephoneNo: telbox.value,
+                Tin: tinbox.value,
+                Nationality: natbox.value,
+                Sex: genbox.value,
+                Birthday: birthbox.value,
+                Height: heightbox.value,
+                Weight: weightbox.value,
+                CivilStatus: civilbox.value,
+                EducationAttain: educbox.value,
+                BloodType: bloodbox.value,
+                RollNo: rollbox.value
+            })
+                .then(() => {
+                    alert("data updated successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+
+        //Delete Function
+        function DeleteData() {
+            remove(ref(db, "Lto-Form/" + lastbox.value))
+                .then(() => {
+                    alert("data removed successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+        function validate_field(field) {
+            if (field == null) {
+                return false
+            }
+            if (field.length <= 0) {
+                return false
+            } else {
+                return true
+            }
+
+        }
+
+        instBtn.addEventListener('click', InsertData);
+        selBtn.addEventListener('click', SelectData);
+        updBtn.addEventListener('click', UpdateData);
+        delBtn.addEventListener('click', DeleteData);
+    </script>
+
 </body>
-<style>
-    .centerBanner {
-        margin: auto;
-        width: 60%;
-        padding: 10px;
-    }
-</style>
-<div class="col-6 centerBanner">
-    <img src="assets/images/Banner.png">
-</div>
 
 </html>
