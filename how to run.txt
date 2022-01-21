@@ -1,0 +1,3 @@
+just click index.html
+for admin click admin > index.html
+ 

@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -34,7 +30,7 @@
                                     Number</a></li>
                             <li class="scroll-to-section"><a href="technology.html" class="active">Technology
                                     Used</a></li>
-                            <li class="scroll-to-section"><a href="lto.html" class="active">LTO-ADL-Form21</a>
+                            <!-- <li class="scroll-to-section"><a href="lto.html" class="active">LTO-ADL-Form21</a> -->
                             </li>
 
                             <!-- ”LTO-ADL-Form21 -->
@@ -63,53 +59,45 @@
                 <div class="centeredText">
                 </div>
                 <div class="action_btns">
-                    <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                    <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+                    <div class="one_half"><a id="login_form" class="btn">Login</a></div>
+                    <div class="one_half last"><a id="register_form" class="btn">Sign up</a></div>
                 </div>
             </div>
             <div class="user_login">
-                <form>
-                    <label>Email / Username</label>
-                    <input type="text" />
-                    <br />
-                    <label>Password</label>
-                    <input type="password" />
-                    <br />
-                    <div class="checkbox">
-                        <input id="remember" type="checkbox" />
-                        <label for="remember">Remember me on this computer</label>
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Email">
+                <br />
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <br />
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
+                            Back</a>
                     </div>
-                    <div class="action_btns">
-                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
-                                Back</a>
-                        </div>
-                        <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
-                    </div>
-                </form>
+                    <div class="one_half last"> <button onclick="login()">Login</button></div>
+                </div>
                 <a href="#" class="forgot_password">Forgot password?</a>
             </div>
             <div class="user_register">
-                <form>
-                    <label>Full Name</label>
-                    <input type="text" />
-                    <br />
-                    <label>Email Address</label>
-                    <input type="email" />
-                    <br />
-                    <label>Password</label>
-                    <input type="password" />
-                    <br />
-                    <div class="checkbox">
-                        <input id="send_updates" type="checkbox" />
-                        <label for="send_updates">Update</label>
+                <label>Email Address</label>
+                <input type="email" id="emailRegister" placeholder="Email">
+                <br />
+                <label>Password</label>
+                <input type="password" id="passwordRegister" placeholder="Password">
+                <br />
+                <label>First Name</label>
+                <input type="text" id="first_nameRegister" placeholder="Name">
+                <br />
+                <label>Last Name</label>
+                <input type="text" id="last_nameRegister" placeholder="Last Name">
+                <br />
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
+                            Back</a>
                     </div>
-                    <div class="action_btns">
-                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
-                                Back</a>
-                        </div>
-                        <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
-                    </div>
-                </form>
+                    <div class="one_half last"> <button onclick="register()">Register</button></div>
+                </div>
             </div>
         </section>
     </div>
@@ -147,15 +135,7 @@
             </div>
         </div>
     </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script type="text/javascript" src="firebaseConfig.js"></script>
-    <script></script>
+
 </body>
 <style>
     .centerBanner {
@@ -168,5 +148,17 @@
     <img src="assets/images/Banner.png">
 
 </div>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/imagesloaded.js"></script>
+<script src="assets/js/popup.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="index.js"></script>
+<script></script>
 
 </html>

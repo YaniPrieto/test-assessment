@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD TUT</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 80px
+        }
+
+        input,
+        select {
+            width: 120px;
+        }
+    </style>
+    <center>
+        <p>Admin Page</p>
+    </center>
+
+    <label>Search Last Name:</label> <input id="Searchbox" type="text"> <button id="Selbtn">Search</button><br><br><br>
+</head>
+
+<body>
+    <label>First Name</label> <input id="Firstbox" type="text">
+    <label>Last Name</label> <input id="Lastbox" type="text">
+    <label>Tel No</label> <input id="Telbox" type="text"><br><br>
+    <label>Tin</label> <input id="Tinbox" type="text">
+    <label>Nationality</label> <input id="Natbox" type="text">
+    <label>Sex</label>
+    <select id="Genbox"><br><br>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <label>Birthday</label> <input id="Birthbox" type="text">
+    <label>Height</label> <input id="Heightbox" type="text">
+    <label>Weight</label> <input id="Weightbox" type="text"><br><br>
+    <label>Civil Status</label>
+    <select id="Civilbox"><br><br>
+        <option value="Single">Single</option>
+        <option value="Married">Married</option>
+        <option value="Widowed">Widowed</option>
+        <option value="Separated">Separated</option>
+
+    </select>
+    <label>Highest Educational Attainment</label>
+    <select id="Educbox"><br><br>
+        <option value="Male">Post Graduate</option>
+        <option value="Female">College</option>
+        <option value="Female">High School</option>
+        <option value="Female">Elementary</option>
+    </select>
+    <label>Blood Type</label> <input id="Bloodbox" type="text"><br><br>
+    <label>ID</label> <input id="Rollbox" type="text"><br><br>
+
+
+    <hr>
+    <button id="Insbtn">Insert</button>
+    <button id="Updbtn">Update</button>
+    <!-- <button id="Delbtn">Delete</button> -->
+
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCf5OoxpF-pY_FJgFMUJQt0r_pdk1a5t7I",
+            authDomain: "crudtut-caeec.firebaseapp.com",
+            projectId: "crudtut-caeec",
+            storageBucket: "crudtut-caeec.appspot.com",
+            messagingSenderId: "287791850747",
+            appId: "1:287791850747:web:aaae527f6990f83e33fc5e",
+            databaseURL: "https://crudtut-caeec-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        import { getDatabase, ref, get, set, child, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js"
+        const db = getDatabase();
+        // Reference Variables
+        //Admin
+        var searchbox = document.getElementById("Searchbox");
+
+        var firstbox = document.getElementById("Firstbox");
+        var lastbox = document.getElementById("Lastbox");
+        var telbox = document.getElementById("Telbox");
+        var tinbox = document.getElementById("Tinbox");
+        var natbox = document.getElementById("Natbox");
+        var genbox = document.getElementById("Genbox");
+        var birthbox = document.getElementById("Birthbox");
+        var heightbox = document.getElementById("Heightbox");
+        var weightbox = document.getElementById("Weightbox");
+        var civilbox = document.getElementById("Civilbox");
+        var educbox = document.getElementById("Educbox");
+        var bloodbox = document.getElementById("Bloodbox");
+        var rollbox = document.getElementById("Rollbox");
+
+
+
+        var instBtn = document.getElementById("Insbtn");
+        var selBtn = document.getElementById("Selbtn");
+        var updBtn = document.getElementById("Updbtn");
+        var delBtn = document.getElementById("Delbtn");
+
+        // <!-- CREATING DATA -->
+        function InsertData() {
+            if (confirm("You want to confirm?")) {
+
+            } else {
+                return;
+            }
+            if (validate_field(firstbox.value) == false || validate_field(lastbox.value) == false) {
+                alert('No first or last name in the field!')
+                return
+            }
+            if (validate_field(telbox.value) == false || validate_field(tinbox.value) == false) {
+                alert('No Tellphone Number or Tin in the field!')
+                return
+            }
+            if (validate_field(natbox.value) == false || validate_field(birthbox.value) == false) {
+                alert('No Nationality or Birthday in the field!')
+                return
+            }
+            if (validate_field(heightbox.value) == false || validate_field(weightbox.value) == false) {
+                alert('No Weight or Height in the field!')
+                return
+            }
+            if (validate_field(civilbox.value) == false || validate_field(educbox.value) == false) {
+                alert('No Civil Status or Educational Attainment in the field!')
+                return
+            }
+            if (validate_field(bloodbox.value) == false || validate_field(rollbox.value) == false) {
+                alert('No Blood Type or Id Num in the field!')
+                return
+            }
+            set(ref(db, "Lto-Form/" + lastbox.value), {
+                FirstName: firstbox.value,
+                LastName: lastbox.value,
+                TelephoneNo: telbox.value,
+                Tin: tinbox.value,
+                Nationality: natbox.value,
+                Sex: genbox.value,
+                Birthday: birthbox.value,
+                Height: heightbox.value,
+                Weight: weightbox.value,
+                CivilStatus: civilbox.value,
+                EducationAttain: educbox.value,
+                BloodType: bloodbox.value,
+                RollNo: rollbox.value
+
+            })
+                .then(() => {
+                    alert("data stored successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+        //Select Data Function
+        function SelectData() {
+            const dbref = ref(db);
+            get(child(dbref, "Lto-Form/" + searchbox.value)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    firstbox.value = snapshot.val().FirstName,
+                        lastbox.value = snapshot.val().LastName,
+                        telbox.value = snapshot.val().TelephoneNo,
+                        tinbox.value = snapshot.val().Tin,
+                        natbox.value = snapshot.val().Nationality,
+                        genbox.value = snapshot.val().Sex,
+                        birthbox.value = snapshot.val().Birthday,
+                        heightbox.value = snapshot.val().Height,
+                        weightbox.value = snapshot.val().Weight,
+                        civilbox.value = snapshot.val().CivilStatus,
+                        educbox.value = snapshot.val().EducationAttain,
+                        bloodbox.value = snapshot.val().BloodType,
+                        rollbox.value = snapshot.val().RollNo
+
+                } else {
+                    alert("No data found");
+                }
+            })
+                .catch((error) => {
+                    alert("boo you suck error" + error);
+                })
+                ;
+        }
+
+        //Update Data
+        function UpdateData() {
+            if (confirm("You want to confirm?")) {
+
+            } else {
+                return;
+            }
+            if (validate_field(firstbox.value) == false || validate_field(lastbox.value) == false) {
+                alert('No first or last name in the field!')
+                return
+            }
+            if (validate_field(telbox.value) == false || validate_field(tinbox.value) == false) {
+                alert('No Tellphone Number or Tin in the field!')
+                return
+            }
+            if (validate_field(natbox.value) == false || validate_field(birthbox.value) == false) {
+                alert('No Nationality or Birthday in the field!')
+                return
+            }
+            if (validate_field(heightbox.value) == false || validate_field(weightbox.value) == false) {
+                alert('No Weight or Height in the field!')
+                return
+            }
+            if (validate_field(civilbox.value) == false || validate_field(educbox.value) == false) {
+                alert('No Civil Status or Educational Attainment in the field!')
+                return
+            }
+            if (validate_field(bloodbox.value) == false || validate_field(rollbox.value) == false) {
+                alert('No Blood Type or Id Num in the field!')
+                return
+            }
+            update(ref(db, "Lto-Form/" + lastbox.value), {
+                FirstName: firstbox.value,
+                LastName: lastbox.value,
+                TelephoneNo: telbox.value,
+                Tin: tinbox.value,
+                Nationality: natbox.value,
+                Sex: genbox.value,
+                Birthday: birthbox.value,
+                Height: heightbox.value,
+                Weight: weightbox.value,
+                CivilStatus: civilbox.value,
+                EducationAttain: educbox.value,
+                BloodType: bloodbox.value,
+                RollNo: rollbox.value
+            })
+                .then(() => {
+                    alert("data updated successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+
+        //Delete Function
+        function DeleteData() {
+            remove(ref(db, "Lto-Form/" + lastbox.value))
+                .then(() => {
+                    alert("data removed successfully");
+                })
+                .catch((error) => {
+                    alert("failed, chuchu u suck " + error);
+                });
+        }
+        function validate_field(field) {
+            if (field == null) {
+                return false
+            }
+            if (field.length <= 0) {
+                return false
+            } else {
+                return true
+            }
+
+        }
+
+        instBtn.addEventListener('click', InsertData);
+        selBtn.addEventListener('click', SelectData);
+        updBtn.addEventListener('click', UpdateData);
+        delBtn.addEventListener('click', DeleteData);
+    </script>
+
+</body>
+
+</html>
