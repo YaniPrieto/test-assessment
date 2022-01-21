@@ -65,6 +65,11 @@ function login() {
         return
         // Don't continue running the code
     }
+    if (email == "admin@admin.com" && password == "123456") {
+        alert('Admin Login');
+        window.location.href = "admin.html";
+        return;
+    }
     auth.signInWithEmailAndPassword(email, password)
         .then(function () {
             // Declare user variable
@@ -77,8 +82,7 @@ function login() {
             }
             // Push to Firebase Database
             database_ref.child('users/' + user.uid).update(user_data)
-            alert('User Login!')
-            window.location.href = "admin.html";
+            alert('Not Admin! Not Authorized')
         })
         .catch(function (error) {
             // Firebase will use this to alert of its errors
